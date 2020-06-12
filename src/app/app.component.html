@@ -1,0 +1,78 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p>
+
+
+<table>
+	<tr>
+		<td>
+			Opening price :
+		</td>
+		<td>
+			{{openingPrice | number:'1.2-2'}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Balance :
+		</td>
+		<td>
+			{{balance | number:'1.2-2'}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Unit :
+		</td>
+		<td>
+			{{unit | number:'1.2-2'}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Current price :
+		</td>
+		<td>
+			{{currentPrice | number:'1.2-2'}}
+		</td>
+	</tr>
+</table>
+
+<button (click)="performTransaction()">Perform Transaction</button>
+<table border="1">
+	<tr>
+		<th>
+			Transaction No
+		</th>
+		<th>
+			Transaction Type
+		</th>
+		<th>
+			purchase/sell price
+		</th>
+		<th>
+			closing balance
+		</th>
+		<th>
+			unit purchase
+		</th>
+	</tr>
+	<tr *ngFor="let item of trns">
+		<td>
+			{{item.tranactionId}}
+		</td>
+		<td>
+			{{item.type}}
+		</td>
+		<td>
+			{{item.price}}
+		</td>
+		<td>
+			{{item.closingBalance}}
+		</td>
+		<td>
+			{{item.unit}}
+		</td>
+	</tr>
+</table>
